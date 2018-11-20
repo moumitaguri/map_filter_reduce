@@ -13,6 +13,8 @@ const testFilterWithOneElementInArray = function(){
 
 const testFilterWithMoreThanOneElementInArray = function(){
   assert.deepEqual(filter(isEven,[1,1]),[]);
+  assert.deepEqual(filter(isEven,[2,1]),[2]);
+  assert.deepEqual(filter(isEven,[2,1,3,4,6]),[2,4,6]);
 }
 
 const testFilter = function(){
