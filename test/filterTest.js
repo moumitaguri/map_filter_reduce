@@ -5,8 +5,15 @@ const isEven = function(number){
   return number % 2 == 0;
 }
 
-const testFilter = function(){
+const testFilterWithOneElementInArray = function(){
   assert.deepEqual(filter(isEven,[]),[]);
+  assert.deepEqual(filter(isEven,[1]),[]);
+  assert.deepEqual(filter(isEven,[2]),[2]);
+}
+
+const testFilter = function(){
+  testFilterWithOneElementInArray();
+  console.log("tests are passed with single element in array");
 }
 
 testFilter();
