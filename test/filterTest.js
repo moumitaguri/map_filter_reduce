@@ -11,9 +11,16 @@ const testFilterWithOneElementInArray = function(){
   assert.deepEqual(filter(isEven,[2]),[2]);
 }
 
+const testFilterWithMoreThanOneElementInArray = function(){
+  assert.deepEqual(filter(isEven,[1,1]),[]);
+}
+
 const testFilter = function(){
   testFilterWithOneElementInArray();
   console.log("tests are passed with single element in array");
+
+  testFilterWithMoreThanOneElementInArray();
+  console.log("tests are passed with more than one element in array");
 }
 
 testFilter();
