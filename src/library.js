@@ -1,7 +1,7 @@
-const filter = function(inputFunction,inputArray){
+const filter = function(predictor,source){
   let outputArray = [];
-  for(element of inputArray){
-    if(inputFunction(element)){
+  for(element of source){
+    if(predictor(element)){
       outputArray.push(element);
     }
   }
@@ -10,20 +10,20 @@ const filter = function(inputFunction,inputArray){
 
 exports.filter = filter;
 
-const map = function(inputFunction,inputArray){
+const map = function(mapper,source){
   let outputArray = [];
-  for(element of inputArray){
-    outputArray.push(inputFunction(element))
+  for(element of source){
+    outputArray.push(mapper(element))
   }
   return outputArray;
 }
 
 exports.map = map;
 
-const reduce = function(inputFunction,initialValue,inputArray){
+const reduce = function(reducer,initialValue,source){
   let output = initialValue;
-  for(element of inputArray){
-    output = inputFunction(output,element);
+  for(element of source){
+    output = reducer(output,element);
   }
   return output;
 }
