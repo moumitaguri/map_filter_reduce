@@ -1,7 +1,7 @@
-const filter = function(predictor,source){
+const filter = function(predicate,source){
   let outputArray = [];
   for(element of source){
-    if(predictor(element)){
+    if(predicate(element)){
       outputArray.push(element);
     }
   }
