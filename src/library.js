@@ -20,7 +20,11 @@ const map = function(mapper,source){
 
 exports.map = map;
 
-const reduce = function(reducer,initialValue,source){
+const reduce = function(reducer,source,initialValue){
+  if(initialValue == undefined){
+    initialValue = source[0];
+    source = source.slice(1);
+  }
   let output = initialValue;
   for(element of source){
     output = reducer(output,element);

@@ -10,16 +10,18 @@ const findMax = function(num1,num2){
 }
 describe('reduce -> take an array and returns an integer value',function(){
   it('for empty array', function(){
-    assert.equal(reduce(sum,2,[]),2);
-    assert.equal(reduce(findMax,0,[]),0);
+    assert.equal(reduce(sum,[],2),2);
+    assert.equal(reduce(findMax,[],0),0);
   });
   it('for array of one element', function(){
-    assert.equal(reduce(sum,2,[1]),3);
-    assert.equal(reduce(findMax,0,[0]),0);
-    assert.equal(reduce(findMax,0,[4]),4);
+    assert.equal(reduce(sum,[1],2),3);
+    assert.equal(reduce(sum,[1]),1);
+    assert.equal(reduce(findMax,[0],0),0);
+    assert.equal(reduce(findMax,[4],0),4);
   });
   it('for array of multiple elements', function(){
-    assert.equal(reduce(sum,2,[1,2]),5);
-    assert.equal(reduce(findMax,0,[1,2]),2);
+    assert.equal(reduce(sum,[1,2],2),5);
+    assert.equal(reduce(sum,[1,2]),3);
+    assert.equal(reduce(findMax,[1,2],0),2);
   });
 });
