@@ -19,3 +19,13 @@ const map = function(inputFunction,inputArray){
 }
 
 exports.map = map;
+
+const reduce = function(inputFunction,initialValue,inputArray){
+  let output = initialValue;
+  for(element of inputArray){
+    output = inputFunction(output,element);
+  }
+  return output;
+}
+
+exports.reduce = reduce;
